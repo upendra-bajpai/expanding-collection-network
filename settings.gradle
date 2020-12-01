@@ -1,0 +1,2 @@
+include ':app', ':xruntimeForm',':expanding_collection', ':sapmle'
+project(':expanding_collection').projectDir = new File('expanding-collection')
