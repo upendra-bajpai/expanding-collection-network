@@ -1,0 +1,128 @@
+apply plugin: 'com.android.library'
+apply plugin: 'signing'
+apply plugin: 'com.bmuschko.nexus'
+apply plugin: "jacoco"
+
+group = 'ml.geekypanda'
+version = '1.0.0'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 3
+        versionName version
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            versionNameSuffix "Debug"
+            debuggable true
+            testCoverageEnabled = true
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.1.1"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor  "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    testImplementation 'junit:junit:4.12'
+}
+
+modifyPom {
+    project {
+        name 'Expanding Collection for Android'
+        description 'ExpandingCollection is a card peek/pop controller https://geekypanda.ml'
+        url 'https://github.com/upendra-bajpai/expanding-collection-network'
+        inceptionYear '2020'
+
+        scm {
+            url 'https://github.com/upendra-bajpai/expanding-collection-network'
+            connection 'scm:git@github.com:upendra-bajpai/expanding-collection-network.git'
+            developerConnection 'scm:git@github.com:upendra-bajpai/expanding-collection-network.git'
+        }
+
+        licenses {
+            license {
+                name 'The MIT License (MIT)'
+                url 'https://opensource.org/licenses/mit-license.php'
+                distribution 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id 'upendra-bajpai'
+                name 'Upendra Bajpai'
+                email 'supernovaplazma@gmail.com'
+            }
+
+        }
+    }
+}
+
+extraArchive {
+    sources = false
+    tests = false
+    javadoc = false
+}
+
+nexus {
+    sign = true
+    repositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+    snapshotRepositoryUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+}
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    reportsDir = file("$buildDir/reports/jacoco")
+
+}
+
+task jacocoReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+    group = 'Reporting'
+    description = 'Generate Jacoco coverage reports after running tests.'
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    classDirectories = fileTree(
+            dir: 'build/intermediates/classes/debug',
+            excludes: [
+                    '**/R*.class',
+                    '**/BuildConfig*'
+            ]
+    )
+
+    sourceDirectories = files('src/main/java')
+    executionData = files('build/jacoco/testDebugUnitTest.exec')
+
+    doFirst {
+        files('build/intermediates/classes/debug').getFiles().each { file ->
+            if (file.name.contains('$$')) {
+                file.renameTo(file.path.replace('$$', '$'))
+            }
+        }
+    }
+}
