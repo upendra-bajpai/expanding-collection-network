@@ -1,4 +1,4 @@
-.gradle
-.idea
-app
-sample
+.gradle/
+.idea/
+app/
+sample/
