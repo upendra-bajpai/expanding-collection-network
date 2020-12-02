@@ -1,3 +1,4 @@
+﻿
 <a href="https://www.ramotion.com/agency/app-development/?utm_source=gthb&utm_medium=repo&utm_campaign=expanding-collection-android"><img src="https://github.com/Ramotion/folding-cell/blob/master/header.png"></a>
 
 <a href="https://github.com/Ramotion/expanding-collection-android">
@@ -7,26 +8,15 @@
 
 <h4>ExpandingCollection is a material design card peek/pop controller</h4>
 
-
-___
-
-
-<p><h6>We specialize in the designing and coding of custom UI for Mobile Apps and Websites.</h6>
-<a href="https://www.ramotion.com/agency/app-development/?utm_source=gthb&utm_medium=repo&utm_campaign=expanding-collection-android">
-<img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
-</p>
 <p><h6>Stay tuned for the latest updates:</h6>
 <a href="https://goo.gl/rPFpid" >
-<img src="https://i.imgur.com/ziSqeSo.png/" width="156" height="28"></a></p>
 
-</br>
-
-[![Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)](http://twitter.com/Ramotion)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/Ramotion)
-
-# Check this library on other platforms:
-
-
+[
+![Github](https://img.shields.io/badge/follow-github-black.svg)](https://github.com/upendra-bajpai)
+[![Twitter](https://img.shields.io/badge/Twitter-@Upendra-blue.svg?style=flat)](https://twitter.com/BajpaiUpendra)
+[![Generic badge](https://img.shields.io/badge/visit-medium-black.svg)](https://medium.com/@supernovaplazma)
+[
+![Generic badge](https://img.shields.io/badge/file-issue-black.svg)](https://github.com/upendra-bajpai/expanding-collection-network)
 ## Requirements
 ​
 - Android 4.0 IceCreamSandwich (API lvl 14) or greater
@@ -35,22 +25,34 @@ ___
 ## Installation
 ​
 maven repo:
+Add Jitpack in project gradle
+```groovy
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
 
 Gradle:
 ```groovy
-'com.ramotion.expandingcollection:expanding-collection:0.9.2'
+implementation 'com.github.upendra-bajpai:expanding-collection-network:1.2.0'
+```
 ```
 SBT:
 ```scala
-libraryDependencies += "com.ramotion.expandingcollection" % "expanding-collection" % "0.9.2"
+libraryDependencies += "com.github.upendra-bajpai" % "expanding-collection-network" % "1.2.0"	
+```
 ```
 Maven:
 ```xml
 <dependency>
-	<groupId>com.ramotion.expandingcollection</groupId>
-	<artifactId>expanding-collection</artifactId>
-	<version>0.9.2</version>
-</dependency>
+	    <groupId>com.github.upendra-bajpai</groupId>
+	    <artifactId>expanding-collection-network</artifactId>
+	    <version>1.2.0</version>
+	</dependency>
+```
 ```
 
 ## Basic usage
@@ -235,13 +237,10 @@ public class MainActivity extends Activity {
 }
 ```
 
-You can find this and other, more complex, examples in this repository ​
+Samples are coming soon.
 
 <br>
 
-## 🗂 Check this library on other language:
-<a href="https://github.com/upendra-bajpai/expanding-collection-network"> 
-<img src="https://github.com/ramotion/navigation-stack/raw/master/Swift@2x.png" width="178" height="81"></a>
 
 ## 📄 License
 
@@ -252,11 +251,5 @@ This library is a part of a <a href="https://github.com/Ramotion/android-ui-anim
 
 If you use the open-source library in your project, please make sure to credit and backlink to www.ramotion.com
 
-## 📱 Get the Showroom App for Android to give it a try
-Try this UI component and more like this in our Android app. Contact us if interested.
 
-<a href="https://play.google.com/store/apps/details?id=com.ramotion.showroom" >
-<img src="https://raw.githubusercontent.com/Ramotion/react-native-circle-menu/master/google_play@2x.png" width="104" height="34"></a>
 
-<a href="https://www.ramotion.com/agency/app-development/?utm_source=gthb&utm_medium=repo&utm_campaign=expanding-collection-android">
-<img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
