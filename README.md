@@ -1,4 +1,5 @@
 ﻿
+ ##### Library credits goes to ramotion, I updated this library to use url as images end point.
 <a href="https://www.ramotion.com/agency/app-development/?utm_source=gthb&utm_medium=repo&utm_campaign=expanding-collection-android"><img src="https://github.com/Ramotion/folding-cell/blob/master/header.png"></a>
 
 <a href="https://github.com/Ramotion/expanding-collection-android">
@@ -39,11 +40,9 @@ Gradle:
 ```groovy
 implementation 'com.github.upendra-bajpai:expanding-collection-network:1.2.0'
 ```
-```
 SBT:
 ```scala
 libraryDependencies += "com.github.upendra-bajpai" % "expanding-collection-network" % "1.2.0"	
-```
 ```
 Maven:
 ```xml
@@ -52,7 +51,6 @@ Maven:
 	    <artifactId>expanding-collection-network</artifactId>
 	    <version>1.2.0</version>
 	</dependency>
-```
 ```
 
 ## Basic usage
