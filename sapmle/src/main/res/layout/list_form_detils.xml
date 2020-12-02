@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp">
+
+
+    <TextView
+        android:id="@+id/firstLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/icon"
+        android:layout_toEndOf="@id/icon"
+        android:layout_toRightOf="@id/icon"
+        android:textAppearance="@style/cardItemPersonName" />
+
+    <TextView
+        android:id="@+id/secondLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/firstLine"
+        android:layout_alignLeft="@id/firstLine"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-397dp"
+        android:layout_marginLeft="-397dp"
+        android:layout_marginTop="229dp"
+        android:layout_toEndOf="@id/firstLine"
+        android:layout_toRightOf="@id/firstLine"
+        android:textAppearance="@style/cardItemComment" />
+
+    <Button
+        android:id="@+id/purchase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/colorPrimaryDark" />
+
+</LinearLayout>
